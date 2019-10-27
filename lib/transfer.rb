@@ -7,4 +7,11 @@ class Transfer
     @receiver = receiver
     @status = "pending"
     @amount = amount
+  end
+
+  def valid?
+    self.sender.valid? && self.receiver.valid?
+  end
+
+  def execute_transaction
 end
